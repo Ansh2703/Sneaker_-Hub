@@ -1,4 +1,5 @@
 SNEAKER HUB
+
 SNEAKER HUB is a sleek and modern e-commerce website designed for sneaker enthusiasts. The website features a variety of sneaker collections for both men and women, along with product filters, carousels, user login/signup functionality, and an interactive shopping cart system. The site is built with responsive design principles to ensure a seamless experience across all devices.
 
 Table of Contents
