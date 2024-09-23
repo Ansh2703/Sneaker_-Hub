@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Carousel - Sneakers Casual Style</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo" onclick="window.location.href='index.html'">SNEAKER HUB</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="login.html">Login/Signup</a></li>
+                <li><a href="product-carousel.html" class="active">Product Carousel</a></li>
+                <li>
+                    <a href="shopping-cart.html">
+                        Shopping Cart
+                        <span id="cart-badge">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Product Carousel Section -->
+    <section class="product-carousel">
+        <h2>Our Products</h2>
+
+        <!-- Filters -->
+        <div class="filters">
+            <select id="category-filter">
+                <option value="all">All Categories</option>
+                <option value="men">Men</option>
+                <option value="women">Women</option>
+            </select>
+            <select id="size-filter">
+                <option value="all">All Sizes</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            <select id="color-filter">
+                <option value="all">All Colors</option>
+                <option value="black">Black</option>
+                <option value="white">White</option>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+            </select>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid" id="products-grid">
+            <!-- Product Card 1 -->
+            <div class="product-card" data-category="men" data-size="9" data-color="black">
+                <button class="like-btn" onclick="toggleLike(this)">&#9825;</button>
+                <div class="product-images">
+                    <img src="https://via.placeholder.com/250x200?text=Product+1+Image+1" alt="Product 1 Image 1" class="active">
+                    <img src="https://via.placeholder.com/250x200?text=Product+1+Image+2" alt="Product 1 Image 2">
+                    <div class="carousel-nav">
+                        <button onclick="prevImage(this.parentElement.parentElement)">&#10094;</button>
+                        <button onclick="nextImage(this.parentElement.parentElement)">&#10095;</button>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h3>Men's Sneaker</h3>
+                    <p class="price">₹<span class="product-price">1999</span></p>
+                    <button class="add-to-cart" onclick="addToCart('Men\'s Sneaker', 1999)">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="product-card" data-category="women" data-size="7" data-color="white">
+                <button class="like-btn" onclick="toggleLike(this)">&#9825;</button>
+                <div class="product-images">
+                    <img src="https://via.placeholder.com/250x200?text=Product+2+Image+1" alt="Product 2 Image 1" class="active">
+                    <img src="https://via.placeholder.com/250x200?text=Product+2+Image+2" alt="Product 2 Image 2">
+                    <div class="carousel-nav">
+                        <button onclick="prevImage(this.parentElement.parentElement)">&#10094;</button>
+                        <button onclick="nextImage(this.parentElement.parentElement)">&#10095;</button>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h3>Women's Runner</h3>
+                    <p class="price">₹<span class="product-price">2499</span></p>
+                    <button class="add-to-cart" onclick="addToCart('Women\'s Runner', 2499)">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="product-card" data-category="men" data-size="8" data-color="red">
+                <button class="like-btn" onclick="toggleLike(this)">&#9825;</button>
+                <div class="product-images">
+                    <img src="https://via.placeholder.com/250x200?text=Product+3+Image+1" alt="Product 3 Image 1" class="active">
+                    <img src="https://via.placeholder.com/250x200?text=Product+3+Image+2" alt="Product 3 Image 2">
+                    <div class="carousel-nav">
+                        <button onclick="prevImage(this.parentElement.parentElement)">&#10094;</button>
+                        <button onclick="nextImage(this.parentElement.parentElement)">&#10095;</button>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h3>Men's Classic Sneaker</h3>
+                    <p class="price">₹<span class="product-price">1799</span></p>
+                    <button class="add-to-cart" onclick="addToCart('Men\'s Classic Sneaker', 1799)">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product Card 4 -->
+            <div class="product-card" data-category="women" data-size="6" data-color="blue">
+                <button class="like-btn" onclick="toggleLike(this)">&#9825;</button>
+                <div class="product-images">
+                    <img src="https://via.placeholder.com/250x200?text=Product+4+Image+1" alt="Product 4 Image 1" class="active">
+                    <img src="https://via.placeholder.com/250x200?text=Product+4+Image+2" alt="Product 4 Image 2">
+                    <div class="carousel-nav">
+                        <button onclick="prevImage(this.parentElement.parentElement)">&#10094;</button>
+                        <button onclick="nextImage(this.parentElement.parentElement)">&#10095;</button>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <h3>Women's Sport Sneaker</h3>
+                    <p class="price">₹<span class="product-price">2199</span></p>
+                    <button class="add-to-cart" onclick="addToCart('Women\'s Sport Sneaker', 2199)">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Add more product cards as needed -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Toggle Like Button
+        function toggleLike(button) {
+            button.classList.toggle('liked');
+            if (button.classList.contains('liked')) {
+                button.innerHTML = '&#9829;'; // Filled heart
+            } else {
+                button.innerHTML = '&#9825;'; // Empty heart
+            }
+
+            // Optionally, store liked products in localStorage
+            let likedProducts = JSON.parse(localStorage.getItem('likedProducts')) || [];
+            const productName = button.parentElement.querySelector('.product-details h3').textContent;
+            if (button.classList.contains('liked')) {
+                likedProducts.push(productName);
+            } else {
+                likedProducts = likedProducts.filter(name => name !== productName);
+            }
+            localStorage.setItem('likedProducts', JSON.stringify(likedProducts));
+        }
+
+        // Carousel Image Navigation
+        function nextImage(productCard) {
+            const images = productCard.querySelectorAll('.product-images img');
+            const activeImage = productCard.querySelector('.product-images img.active');
+            let newIndex = Array.from(images).indexOf(activeImage) + 1;
+            if (newIndex >= images.length) newIndex = 0;
+            activeImage.classList.remove('active');
+            images[newIndex].classList.add('active');
+        }
+
+        function prevImage(productCard) {
+            const images = productCard.querySelectorAll('.product-images img');
+            const activeImage = productCard.querySelector('.product-images img.active');
+            let newIndex = Array.from(images).indexOf(activeImage) - 1;
+            if (newIndex < 0) newIndex = images.length - 1;
+            activeImage.classList.remove('active');
+            images[newIndex].classList.add('active');
+        }
+
+        // Add to Cart Functionality
+        function addToCart(productName, price) {
+            // Retrieve existing cart from localStorage or initialize empty array
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ name: productName, price: price });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${productName} has been added to your cart.`);
+            displayCartBadge(); // Update cart badge
+        }
+
+        // Display Cart Badge Count
+        function displayCartBadge() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartBadge = document.getElementById('cart-badge');
+            if (cartBadge) {
+                cartBadge.textContent = cart.length;
+            }
+        }
+
+        // Filter Products
+        const categoryFilter = document.getElementById('category-filter');
+        const sizeFilter = document.getElementById('size-filter');
+        const colorFilter = document.getElementById('color-filter');
+        const productsGrid = document.getElementById('products-grid');
+
+        function filterProducts() {
+            const category = categoryFilter.value;
+            const size = sizeFilter.value;
+            const color = colorFilter.value;
+
+            const products = productsGrid.getElementsByClassName('product-card');
+
+            Array.from(products).forEach(product => {
+                const productCategory = product.getAttribute('data-category');
+                const productSize = product.getAttribute('data-size');
+                const productColor = product.getAttribute('data-color');
+
+                let display = true;
+
+                if (category !== 'all' && productCategory !== category) {
+                    display = false;
+                }
+
+                if (size !== 'all' && productSize !== size) {
+                    display = false;
+                }
+
+                if (color !== 'all' && productColor !== color) {
+                    display = false;
+                }
+
+                product.style.display = display ? 'block' : 'none';
+            });
+        }
+
+        // Event Listeners for Filters
+        categoryFilter.addEventListener('change', filterProducts);
+        sizeFilter.addEventListener('change', filterProducts);
+        colorFilter.addEventListener('change', filterProducts);
+
+        // Assign Random Prices to Products on Page Load
+        window.onload = function() {
+            const productPrices = document.querySelectorAll('.product-price');
+            productPrices.forEach(priceSpan => {
+                const randomPrice = Math.floor(Math.random() * 3000) + 1000; // Random price between ₹1000 and ₹4000
+                priceSpan.textContent = randomPrice;
+            });
+
+            displayCartBadge();
+        };
+    </script>
+</body>
+</html>
